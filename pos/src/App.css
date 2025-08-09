@@ -1,10 +1,10 @@
 /* Main Styling */
 
-.container {
+.body {
     /* border: red 1px solid; */
 
-    min-height: 100vh;
     display: flex;
+    margin: 0;
 }
 
 /* Theme Toggle */
@@ -56,21 +56,15 @@
     pointer-events: none;
 }
 
-/* Layer */
-
-.layer {
-    height: 100%;
-}
-
 /* Sidebar */
 
 .side-bar {
     border: rgb(89, 0, 255) 1px solid;
 
-    width: 4%;
+    width: 4vw;
     height: 100vh;
     z-index: 2;
-    opacity: 1;
+    /* opacity: 1; */
     transition: width 0.2s ease-in, opacity 0.2s ease-in;
 
     display: flex;
@@ -79,11 +73,27 @@
 } 
 
 .side-bar:hover {
-    width: 5%;
+    width: 6vw;
 }
 
 .icon-wrapper-sidebar {
     margin-top: 4rem;
+}
+
+/* Layer */
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Main content */
+
+.main-content-container{
+    display: flex;
+    width: 60%;
+    height: 100vh;
 }
 
 /* Orders Container */
@@ -91,6 +101,6 @@
 .orders-container {
     border: 1px rgb(255, 0, 0) solid;
     
-    width: 60%;
+    width: 40%;
     height: 100vh;
 }
