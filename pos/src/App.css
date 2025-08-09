@@ -1,51 +1,96 @@
 /* Main Styling */
 
 .container {
-  border: red 1px solid;
+    /* border: red 1px solid; */
 
-  min-height: 100vh;
-  display: flex;
+    min-height: 100vh;
+    display: flex;
 }
 
-.toggle-lighting {
-  /* border: red 1px solid; */
+/* Theme Toggle */
 
-  border: none;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 100;
-  background: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  font-size: 1.5rem;
+.toggle-lighting {
+    /* border: red 1px solid; */
+
+    border: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+    background: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.5rem;
 }
 
 .icon-wrapper {
-  position: relative;
-  width: 28px;
-  height: 28px;
-  padding: 0;
+    /* border: red 1px solid; */
+
+    position: relative;
+    width: 28px;
+    height: 28px;
+    padding: 0;
 }
 
 .icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 28px;
-  height: 28px;
-  transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+    /* border: red 1px solid; */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
 }
 
 .visible {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: auto;
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
 }
 
 .hidden {
-  opacity: 0;
-  transform: scale(0);
-  pointer-events: none;
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+/* Layer */
+
+.layer {
+    height: 100%;
+}
+
+/* Sidebar */
+
+.side-bar {
+    border: rgb(89, 0, 255) 1px solid;
+
+    width: 4%;
+    height: 100vh;
+    z-index: 2;
+    opacity: 1;
+    transition: width 0.2s ease-in, opacity 0.2s ease-in;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.side-bar:hover {
+    width: 5%;
+}
+
+.icon-wrapper-sidebar {
+    margin-top: 4rem;
+}
+
+/* Orders Container */
+
+.orders-container {
+    border: 1px rgb(255, 0, 0) solid;
+    
+    width: 60%;
+    height: 100vh;
 }
