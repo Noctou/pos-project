@@ -28,6 +28,9 @@ function App() {
             <div className='table-container'>
               <Orders />
             </div>
+            <div className='calculator-container'>
+
+            </div>
           </div>
         </div>
       </div>
