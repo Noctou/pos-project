@@ -2,7 +2,7 @@
 import Rubiks from '../assets/sticker-1.png';
 import Dog from '../assets/sticker-2.png';
 import Bird from '../assets/sticker-3.png';
-import Rat from '../assets/sticker-4.png';
+import Cat from '../assets/sticker-4.png';
 import Capybara from '../assets/sticker-5.png';
 
 /* Keychains */
@@ -26,54 +26,67 @@ export default function MainContent(){
 
             <div className="item">
                 <img class="sticker" src={Rubiks} alt="Sticker-1" />
+                <p>Computer vs. Rubiks Cube</p>
             </div>
             
             <div className="item">
                 <img class="sticker" src={Dog} alt="Sticker-2" />
+                <p>Dr. PomPom</p>
             </div>
 
             <div className="item">
                 <img class="sticker" src={Bird} alt="Sticker-3" />
+                <p>Pigeon Loading</p>
             </div>
 
             <div className="item">
-                <img class="sticker" src={Rat} alt="Sticker-4" />
+                <img class="sticker" src={Cat} alt="Sticker-4" />
+                <p>Cat Gaming</p>
             </div>
 
             <div className="item">
                 <img class="sticker" src={Capybara} alt="Sticker-5" />
+                <p>Sleeping Capybara</p>
             </div>
 
             <div className="item">
-                <img class="keychain" src={EarlAgustin} alt="" />
+                <img class="keychain" src={EarlAgustin} alt="Keychain-1" />
+                <p>Earl Agustin</p>
             </div>
 
             <div className="item">
-                <img class="keychain" src={Ivos} alt="" />
+                <img class="keychain" src={Ivos} alt="Keychain-2" />
+                <p>IV of Spades</p>
             </div>
 
             <div className="item">
-                <img class="keychain" src={Niki} alt="" />
+                <img class="keychain" src={Niki} alt="Keychain-3" />
+                <p>Niki</p>
             </div>
 
             <div className="item">
-                <img class="keychain" src={Bea} alt="" />
+                <img class="keychain" src={Bea} alt="Keychain-4" />
+                <p>Beabadoobee</p>
             </div>
 
             <div className="item">
-                <img class="keychain" src={Clairo} alt="" />
+                <img class="keychain" src={Clairo} alt="Keychain-5" />
+                <p>Clairo</p>
             </div>
 
             <div className="item">
-                <img class="keychain" src={Faye} alt="" />
+                <img class="keychain" src={Faye} alt="Keychain-6" />
+                <p>Faye Webster</p>
             </div>
 
             <div className="item">
-                <img class="keychain" src={Tyler} alt="" />
+                <img class="keychain" src={Tyler} alt="Keychain-7" />
+                <p>Tyler, The Creator</p>
             </div>
 
             <div className="item">
-                <img class="keychain" src={Coj} alt="" />
+                <img class="keychain" src={Coj} alt="Keychain-8" />
+                <p>Cup of Joe</p>
             </div>
         </div>
     );

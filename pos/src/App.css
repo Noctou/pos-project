@@ -167,6 +167,7 @@
 img {
     width: 224px;
     height: 224px;
+    border-radius: 8px;
 }
 
 .buttons-wrapper {
