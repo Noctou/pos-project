@@ -25,8 +25,9 @@ function App() {
             <div className="orders-header">
               <h1>Orders:</h1>
             </div>
-
-            <Orders />
+            <div className='table-container'>
+              <Orders />
+            </div>
           </div>
         </div>
       </div>
