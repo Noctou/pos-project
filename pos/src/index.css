@@ -1,8 +1,12 @@
 /* Main Page Layout Styling */
 
-html::-webkit-scrollbar,
+/* html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
+} */
+
+html {
+  overflow: hidden;
 }
 
 body {
