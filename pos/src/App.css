@@ -139,10 +139,12 @@
     /* border: 1px red solid; */
 
     display: flex;
+    align-content: flex-start;
+    gap: 10px;
     flex-wrap: wrap;
-    gap: 1rem;
+    overflow-x: auto;
+    padding: 1%;
 
-    padding: 4rem;
 }
 
 .item {
@@ -152,7 +154,17 @@
     height: 24px;
 }
 
+.buttons{
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
 
+.buttons button{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+}
 /* Orders Container */
 
 .orders-header {
