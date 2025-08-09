@@ -2,7 +2,7 @@ import useTheme from './hooks/useThemeToggle';
 
 import ThemeToggle from "./components/ThemeToggle";
 import Sidebar from './components/Sidebar';
-import Checkout from './components/Checkout';
+import Orders from './components/Orders';
 
 import './App.css'
 
@@ -17,7 +17,7 @@ function App() {
           
         <div className="layer">
           <div className="orders-container">
-            <Checkout />
+            <Orders />
           </div>
 
         </div>

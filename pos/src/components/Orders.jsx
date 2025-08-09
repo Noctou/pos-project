@@ -1,4 +1,4 @@
-export default function Checkout() {
+export default function Orders() {
     return(
         <div className="orders-wrapper">
 
