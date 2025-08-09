@@ -1,0 +1,24 @@
+/* Main Page Layout Styling */
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  transition: background-color 0.5s, color 0.5s;
+
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body.dark {
+  background-color: #1d1d1d;
+  color: #e9e9e9;
+}
+
+body.light {
+  background-color: #dddddd;
+  color: #000000;
+}
