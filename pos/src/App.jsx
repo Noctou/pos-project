@@ -16,6 +16,10 @@ function App() {
         <Sidebar />
           
         <div className="layer">
+          <div className="items-container">
+            
+          </div>
+
           <div className="orders-container">
             <Orders />
           </div>
