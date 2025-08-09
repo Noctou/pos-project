@@ -192,6 +192,11 @@ img {
     transform: scale(1.1);
 }
 
+.buttons-wrapper button.active {
+    background-color: rgb(30, 30, 100);
+    transform: scale(1.05);
+}
+
 /* Orders Container */
 
 .orders-header {

@@ -14,7 +14,7 @@ body {
   font-family: sans-serif;
   transition: background-color 0.5s, color 0.5s;
 
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 body.dark {
