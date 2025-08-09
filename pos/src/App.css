@@ -1,6 +1,6 @@
 /* Main Styling */
 
-.body {
+.container {
     /* border: red 1px solid; */
 
     display: flex;
@@ -59,7 +59,7 @@
 /* Sidebar */
 
 .side-bar {
-    border: rgb(89, 0, 255) 1px solid;
+    /* border: rgb(89, 0, 255) 1px solid; */
 
     width: 4vw;
     height: 100vh;
@@ -70,6 +70,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    background-color: rgb(77, 77, 209);
 } 
 
 .side-bar:hover {
@@ -77,12 +79,47 @@
 }
 
 .icon-wrapper-sidebar {
-    margin-top: 4rem;
+    margin-top: 6rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-tooltip {
+    margin-bottom: 2rem;
+
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 8px;
+    border-radius: 6px;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s, top 0.3s;
+    z-index: 10;
+}
+
+.icon-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    top: 140%; /* little slide down effect */
 }
 
 /* Layer */
 
-.container {
+.layer {
     display: flex;
     width: 100%;
     height: 100vh;
@@ -90,17 +127,43 @@
 
 /* Main content */
 
-.main-content-container{
+.main-content-container {
+    border: 1px rgb(255, 0, 0) solid;
+
     display: flex;
     width: 60%;
     height: 100vh;
 }
 
+.items-container {
+    /* border: 1px red solid; */
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    padding: 4rem;
+}
+
+.item {
+    border: 1px red solid;
+
+    width: 24px;
+    height: 24px;
+}
+
+
 /* Orders Container */
 
+.orders-header {
+    margin-left: 2rem;
+}
+
 .orders-container {
-    border: 1px rgb(255, 0, 0) solid;
+    /* border: 1px rgb(255, 0, 0) solid; */
     
     width: 40%;
     height: 100vh;
+
+    background-color: rgb(77, 77, 209);
 }
