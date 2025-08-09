@@ -154,16 +154,20 @@
     height: 24px;
 }
 
-.buttons{
+.buttons-wrapper {
     display: flex;
     gap: 15px;
     width: 100%;
 }
 
-.buttons button{
-    width: 100px;
-    height: 50px;
+.buttons-wrapper button {
+    width: 15%;
+    height: 30px;
     border-radius: 10px;
+
+    background-color: rgb(77, 77, 209);
+    border: none;
+    color: white;
 }
 /* Orders Container */
 

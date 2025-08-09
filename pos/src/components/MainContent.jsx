@@ -1,10 +1,10 @@
 export default function MainContent(){
     return (
         <div className="items-container">
-            <div className="buttons">
-                <button></button>
-                <button></button>
-                <button></button>
+            <div className="buttons-wrapper">
+                <button>All</button>
+                <button>Stickers</button>
+                <button>Laminated Keychains</button>
             </div>
             <div className="item">
                 <svg 
