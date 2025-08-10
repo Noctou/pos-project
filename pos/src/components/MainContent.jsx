@@ -17,7 +17,7 @@ import Faye from '../assets/track-6.png';
 import Coj from '../assets/track-7.png';
 import Tyler from '../assets/track-8.png';
 
-export default function MainContent() {
+export default function MainContent({ onAddToOrder }) {
     const [filter, setFilter] = useState("All");
 
     const items = [
@@ -62,7 +62,11 @@ export default function MainContent() {
             </div>
 
             {filteredItems.map((item, index) => (
-                <div className="item" key={index}>
+                <div
+                    className="item"
+                    key={index}
+                    onClick={() => onAddToOrder(item)}
+                >
                     <img 
                         className={item.category.toLowerCase()} 
                         src={item.src} 

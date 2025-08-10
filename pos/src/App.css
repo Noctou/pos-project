@@ -119,14 +119,6 @@
     top: 140%; /* little slide down effect */
 }
 
-/* Layer */
-
-.layer {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-}
-
 /* Main content */
 
 .items-container {
@@ -233,17 +225,18 @@ img {
 
 .orders-table th{
     background-color: rgb(48, 26, 146);
-    border: 1px solid black;
     width: 100%;
     height: 3rem;
     position: sticky;
     top: 0;
+    
 }
 
-.ordered-items tr, td{
-    border: 1px solid black;
+.ordered-items td{
+    border-bottom: 1px solid black;
     height: 30px;
-    background-color: white;
+    text-align: center;
+    /* background-color: rgb(60, 58, 63); */
 }
 
 .calculator-container{

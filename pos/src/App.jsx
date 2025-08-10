@@ -1,14 +1,10 @@
 import { useState } from "react";
 
-import useTheme from './hooks/useThemeToggle';
-
-import ThemeToggle from "./components/ThemeToggle";
-import Sidebar from './components/Sidebar';
-import Orders from './components/Orders';
-import MainContent from './components/MainContent';
-
 import './App.css'
-import Calculator from './components/Calculator';
+import useTheme from './hooks/useThemeToggle';
+import ThemeToggle from "./components/ThemeToggle";
+
+import Sidebar from './components/Sidebar';
 import HistoryPage from "./pages/HistoryPage";
 import InventoryPage from "./pages/InventoryPage";
 import HomePage from "./pages/HomePage";
