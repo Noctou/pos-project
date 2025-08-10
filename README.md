@@ -12,7 +12,8 @@
 ## CREATE DATABASE (MySQL)
 1. Start MySQL in XAMPP
 
-2. ```
+2.
+   ```
    CREATE DATABASE cashier;
     
    CREATE TABLE stocks (
@@ -22,7 +23,9 @@
        price int,
        status VARCHAR(55),
        stocks_quantity int
-   );```
+   );
+
+   ```
 ---
 
 ## START FRONTEND (React)
