@@ -30,5 +30,5 @@
 
 ## START FRONTEND (React)
 
-1. run 'npm run dev' in the terminal from the root directory of the project
+1. run `npm run dev` in the terminal from the root directory of the project
 
