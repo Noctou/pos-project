@@ -6,6 +6,10 @@ import Calculator from '../components/Calculator';
 
 export default function HomePage(){
     const [orderedItems, setOrderedItems] = useState([]);
+    const [showSummary, setShowSummary] = useState(false);
+
+    const now = new Date();
+    const currTime = now.toLocaleString();
 
     const addToOrder = (item) => {
         setOrderedItems((prev) => {
@@ -37,6 +41,14 @@ export default function HomePage(){
         });
     };
 
+    const clearOrders = () => {
+        setOrderedItems([]);
+    };
+
+    const handleCheckOut = () => {
+        setShowSummary(true);
+    }
+
     return(
         <>
             <div className="container home">
@@ -45,9 +57,46 @@ export default function HomePage(){
                 </div>
                 <div className="orders-container">
                     <Orders orderedItems={orderedItems} onReduceQuantity={reduceQuantity}/>
-                    <Calculator />
+                    <Calculator
+                        orderedItems={orderedItems}
+                        onCancel={clearOrders}
+                        onCheckOut={handleCheckOut}
+                    />
                 </div>
             </div>
+
+            {showSummary && (
+                <div className="popup-overlay">
+                    <div className="popup">
+                        <h2>Purchase Summary</h2>
+                        <p><strong>Time: </strong>{currTime} </p>
+                        <ul>
+                            {orderedItems.map((item, idx) => (
+                                <li key={idx}>
+                                    {item.name} * {item.quantity} = ₱{item.price * item.quantity}
+                                </li>
+                            ))}
+                        </ul>
+                        <p>
+                            <strong>
+                                Total: ₱
+                                {orderedItems.reduce(
+                                    (sum, i) => sum + i.price * i.quantity,
+                                    0
+                                )}
+                            </strong>
+                        </p>
+                        <button
+                            onClick={() => {
+                                setShowSummary(false);
+                                clearOrders();
+                            }}
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </>
-    )
+    );
 }

@@ -20,20 +20,23 @@ import Tyler from '../assets/track-8.png';
 export default function MainContent({ onAddToOrder }) {
     const [filter, setFilter] = useState("All");
 
+    const stickerPrice = 50;
+    const keychainPrice = 120;
+
     const items = [
-        { name: "Computer vs. Rubiks Cube", src: Rubiks, category: "Sticker" },
-        { name: "Dr. PomPom", src: Dog, category: "Sticker" },
-        { name: "Pigeon Loading", src: Bird, category: "Sticker" },
-        { name: "Cat Gaming", src: Cat, category: "Sticker" },
-        { name: "Sleeping Capybara", src: Capybara, category: "Sticker" },
-        { name: "Earl Agustin", src: EarlAgustin, category: "Keychain" },
-        { name: "IV of Spades", src: Ivos, category: "Keychain" },
-        { name: "Niki", src: Niki, category: "Keychain" },
-        { name: "Beabadoobee", src: Bea, category: "Keychain" },
-        { name: "Clairo", src: Clairo, category: "Keychain" },
-        { name: "Faye Webster", src: Faye, category: "Keychain" },
-        { name: "Tyler, The Creator", src: Tyler, category: "Keychain" },
-        { name: "Cup of Joe", src: Coj, category: "Keychain" },
+        { name: "Computer vs. Rubiks Cube", src: Rubiks, category: "Sticker", price: stickerPrice },
+        { name: "Dr. PomPom", src: Dog, category: "Sticker", price: stickerPrice },
+        { name: "Pigeon Loading", src: Bird, category: "Sticker", price: stickerPrice },
+        { name: "Cat Gaming", src: Cat, category: "Sticker", price: stickerPrice },
+        { name: "Sleeping Capybara", src: Capybara, category: "Sticker", price: stickerPrice },
+        { name: "Earl Agustin", src: EarlAgustin, category: "Keychain", price: keychainPrice },
+        { name: "IV of Spades", src: Ivos, category: "Keychain", price: keychainPrice },
+        { name: "Niki", src: Niki, category: "Keychain", price: keychainPrice },
+        { name: "Beabadoobee", src: Bea, category: "Keychain", price: keychainPrice },
+        { name: "Clairo", src: Clairo, category: "Keychain", price: keychainPrice },
+        { name: "Faye Webster", src: Faye, category: "Keychain", price: keychainPrice },
+        { name: "Tyler, The Creator", src: Tyler, category: "Keychain", price: keychainPrice },
+        { name: "Cup of Joe", src: Coj, category: "Keychain", price: keychainPrice },
     ];
 
     const filteredItems = filter === "All" ? items : items.filter(item => item.category === filter);

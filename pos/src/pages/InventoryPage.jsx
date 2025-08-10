@@ -25,7 +25,7 @@ export default function InventoryPage(){
 
                         <select name="status" id="status" defaultValue={""}>
                             <option value="" disabled hidden>Stock Status</option>
-                            <option value="in stock">In Stock</option>
+                            <option value="in-stock">In Stock</option>
                             <option value="out of stock">Out of Stock</option>
                             <option value="all">All</option>
                         </select>
