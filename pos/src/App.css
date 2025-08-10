@@ -243,10 +243,12 @@ img {
     margin-left: 10px;
     width: 20px;
     height: 20px;
-    background-color: rgb(116, 35, 35);
+    background-color: rgb(139, 30, 30);
     border: 1px solid black;
     border-radius: 5px;
 }
+
+/* Calculator Container */
 
 .calculator-container{
     display: flex;
@@ -334,7 +336,7 @@ img {
 }
 
 #btn-10, #btn-20, #btn-30{
-    background-color: #120a31;
+    background-color: #191038;
 }
 
 #btn-←{
@@ -365,10 +367,157 @@ img {
     transform: scale(1);
 }
 
-.history-page h1{
-    margin-left: 500px;
+/* Inventory Page */
+
+.inventory-container{
+    margin-left: 4vw;
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    gap: 10px;
+    padding: 20px;
+
 }
 
-.inventory-page h1{
+.table-container-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.table-container-header select,
+.table-container-header button,
+#save-button{
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 130px;
+    height: 35px;
+}
+
+#save-button{
+    background-color: #437057;
+    margin-top: auto;
+    margin-left:auto;
+}
+
+.table-container-header button{
+    background-color: rgb(77, 77, 209);
+    color: lightgray;
+}
+
+.table-container-header button:hover,
+#save-button:hover{
+    transform: translateY(-3px);
+}
+
+.table-container-header button:active,
+#save-button:active{
+    transform: translateY(0px);
+}
+
+.filters{
+    display: flex;
+    justify-content: left;
+    gap:20px;
+    align-items: center;
+}
+
+#search{
+    width: 550px;
+    height: 25px;
+    border:none;
+    border-bottom: 1px solid rgb(77, 77, 209);
+    background: none;
+    outline:none;
+    padding: 5px;
+    font-size: medium;
+}
+
+#search:focus{
+    border-bottom: 2px solid rgb(77, 77, 209);
+    
+}
+
+#context-menu{
+    display: none;
+    position: absolute;
+    background: #CD0B0B;
+    border: 1px solid black;
+    border-radius: 10px;
+    list-style: none;
+    padding: 5px;
+    font-size: small;
+}
+
+#delete-option{
+    padding: 5px;
+    cursor: pointer;
+}
+
+#context-menu:hover{
+    background-color: #7A0000;
+}
+
+.stocks-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    color: lightgray;
+}
+
+.stocks-table td, .stocks-table th{
+    /* width: 100%; */
+    /* max-width: 150px; */
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    color:black;
+    border-bottom: 1px solid black;
+}
+
+.stocks-table th{
+    background-color: rgb(77, 77, 209);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.quantity, .price{
+    height: 100%;
+    width: 80%;
+    font-size: medium;
+    text-align: center;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.product-type{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: large;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.product-status.out-of-stock{
+    background-color: red;
+}
+
+.table-scroll{
+    max-height: 85%;
+    overflow-y: auto;
+    border: 1px solid black;
+    background-color: #b7b7b7;
+}
+
+.history-page h1{
     margin-left: 500px;
 }
