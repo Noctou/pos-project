@@ -36,9 +36,7 @@ export default function MainContent() {
         { name: "Cup of Joe", src: Coj, category: "Keychain" },
     ];
 
-    const filteredItems = filter === "All"
-        ? items
-        : items.filter(item => item.category === filter);
+    const filteredItems = filter === "All" ? items : items.filter(item => item.category === filter);
 
     return (
         <div className="items-container">
