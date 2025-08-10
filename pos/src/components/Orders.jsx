@@ -1,4 +1,4 @@
-export default function Orders({ orderedItems }) {
+export default function Orders({ orderedItems, onReduceQuantity }) {
     return(
         <>
             <div className="orders-header">
@@ -18,7 +18,13 @@ export default function Orders({ orderedItems }) {
                                 <td>{item.name}</td>
                                 <td>{item.category}</td>
                                 <td>{item.price}</td>
-                                <td>{item.quantity}</td>
+                                <td>
+                                    {item.quantity}
+                                    <button
+                                        onClick={() => onReduceQuantity(item.name)}>
+                                    -
+                                    </button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>

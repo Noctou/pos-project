@@ -25,6 +25,18 @@ export default function HomePage(){
         });
     };
 
+    const reduceQuantity = (itemName) => {
+        setOrderedItems((prev) => {
+            return prev
+                .map((order) =>
+                order.name === itemName
+                ? { ...order, quantity: order.quantity -1 }
+                : order
+            )
+            .filter ((order) => order.quantity > 0);
+        });
+    };
+
     return(
         <>
             <div className="container home">
@@ -32,7 +44,7 @@ export default function HomePage(){
                     <MainContent onAddToOrder={addToOrder}/>
                 </div>
                 <div className="orders-container">
-                    <Orders orderedItems={orderedItems}/>
+                    <Orders orderedItems={orderedItems} onReduceQuantity={reduceQuantity}/>
                     <Calculator />
                 </div>
             </div>
