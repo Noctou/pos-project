@@ -1,21 +1,21 @@
 import { useState } from "react";
 
 /* Stickers */
-import Rubiks from '../assets/sticker-1.png';
-import Dog from '../assets/sticker-2.png';
-import Bird from '../assets/sticker-3.png';
-import Cat from '../assets/sticker-4.png';
-import Capybara from '../assets/sticker-5.png';
+import Rubiks from '../../assets/sticker-1.png';
+import Dog from '../../assets/sticker-2.png';
+import Bird from '../../assets/sticker-3.png';
+import Cat from '../../assets/sticker-4.png';
+import Capybara from '../../assets/sticker-5.png';
 
 /* Keychains */
-import EarlAgustin from '../assets/track-1.png';
-import Ivos from '../assets/track-2.png';
-import Niki from '../assets/track-3.png';
-import Bea from '../assets/track-4.png';
-import Clairo from '../assets/track-5.png';
-import Faye from '../assets/track-6.png';
-import Coj from '../assets/track-7.png';
-import Tyler from '../assets/track-8.png';
+import EarlAgustin from '../../assets/track-1.png';
+import Ivos from '../../assets/track-2.png';
+import Niki from '../../assets/track-3.png';
+import Bea from '../../assets/track-4.png';
+import Clairo from '../../assets/track-5.png';
+import Faye from '../../assets/track-6.png';
+import Coj from '../../assets/track-7.png';
+import Tyler from '../../assets/track-8.png';
 
 export default function MainContent({ onAddToOrder }) {
     const [filter, setFilter] = useState("All");

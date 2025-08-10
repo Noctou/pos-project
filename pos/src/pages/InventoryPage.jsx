@@ -1,36 +1,40 @@
-import { useState, useEffect, useMemo } from "react";
+/* import { useState, useEffect, useMemo } from "react";
 import LoadTable from "../components/LoadTable";
+import { getItems, saveItems } from "../services/api";
 
 export default function InventoryPage() {
     const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [order, setOrder] = useState("");
     const [status, setStatus] = useState("");
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
-        async function fetchItems() {
-            try {
-                const res = await fetch("http://localhost/db/getFromDB.php"); // Change to your backend route
-                const data = await res.json();
-                setItems(data);
-            } catch (err) {
-                console.error("Failed to fetch items", err);
-            } finally {
-                setLoading(false);
-            }
-        }
-        fetchItems();
+        getItems()
+            .then(fetchedData => setItems(fetchedData))
+            .catch(err => console.error(err));
     }, []);
 
     const sortedItems = useMemo(() => {
         let sorted = [...items];
 
+        // Filter by status
         if (status && status !== "all") {
             sorted = sorted.filter(item =>
                 item.status?.trim().toLowerCase() === status.toLowerCase()
             );
         }
 
+        // Search filter
+        if (searchTerm.trim() !== "") {
+            const lowerSearch = searchTerm.toLowerCase();
+            sorted = sorted.filter(item =>
+                item.product_name.toLowerCase().includes(lowerSearch) ||
+                item.product_type.toLowerCase().includes(lowerSearch) ||
+                String(item.id).includes(lowerSearch)
+            );
+        }
+
+        // Sorting logic
         switch (order) {
             case "id-asc": sorted.sort((a, b) => a.id - b.id); break;
             case "id-desc": sorted.sort((a, b) => b.id - a.id); break;
@@ -44,13 +48,45 @@ export default function InventoryPage() {
         }
 
         return sorted;
-    }, [items, order, status]);
+    }, [items, order, status, searchTerm]);
+
+    const saveTable = () => {
+        saveItems(items)
+            .then(msg => {
+                alert("Saved: " + msg);
+                console.log(msg)
+                return getItems();
+            })
+            .then(fetchedData => setItems(fetchedData))
+            .catch(err => {
+                console.error("Save failed:", err);
+                alert("Save failed.");
+            });
+    };
+
+    const addItem = () => {
+        const newItem = {
+            id: "",
+            product_name: "Product Name",
+            product_type: "Type 1",
+            price: 1,
+            status: "In Stock",
+            stock: 1
+        };
+        setItems(prev => [...prev, newItem]);
+    };
 
     return (
         <div className="inventory-container">
             <div className="table-container-header">
                 <div className="search-bar">
-                        <input type="text" placeholder="Search" name="search" id="search"/>
+                        <input 
+                            type="text"
+                            placeholder="Search"
+                            name="search"
+                            id="search"
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
                 </div>
 
                 <div className="filters">
@@ -74,13 +110,13 @@ export default function InventoryPage() {
                         <option value="all">All</option>
                     </select>
 
-                    <button onClick={() => { setOrder(""); setStatus(""); }}>
+                    <button onClick={() => { setOrder(""); setStatus(""); setSearchTerm(""); }}>
                         Clear Filter
                     </button>
                 </div>
                 
                 <div className="add-button">
-                    <button>Add Item</button>
+                    <button onClick={addItem}>Add Item</button>
                 </div>
             </div>
 
@@ -97,29 +133,87 @@ export default function InventoryPage() {
                         </tr>
                     </thead>
                     <tbody id="stock-items">
-                        {loading ? (
-                            <tr>
-                                <td colSpan="6" style={{ textAlign: "center" }}>
-                                    <LoadTable />
-                                </td>
-                            </tr>
-                        ) : (
-                            sortedItems.map(item => (
-                                <tr key={item.id}>
-                                    <td>{item.id}</td>
-                                    <td>{item.product_name}</td>
-                                    <td>{item.product_type}</td>
-                                    <td>{item.price}</td>
-                                    <td>{item.status}</td>
-                                    <td>{item.stocks_quantity}</td>
-                                </tr>
-                            ))
-                        )}
+                        <LoadTable data={sortedItems} setData={setItems}/>
                     </tbody>
                 </table>
             </div>
 
-            <button id="save-button">Save</button>
+            <button id="save-button" onClick={saveTable}>Save</button>
         </div>
     );
+}
+ */
+
+import { useState, useEffect, useMemo } from "react";
+import { getItems, saveItems } from "../services/api";
+import { filterByStatus, filterBySearch, sortItems } from "../utils/InventoryFunctions";
+import SearchBar from "../components/inventory/SearchBar";
+import Filters from "../components/inventory/Filters";
+import InventoryTable from "../components/inventory/InventoryTable";
+
+export default function InventoryPage() {
+  const [items, setItems] = useState([]);
+  const [order, setOrder] = useState("");
+  const [status, setStatus] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => { fetchItems(); }, []);
+
+  const fetchItems = () => {
+    getItems().then(setItems).catch(console.error);
+  };
+
+  const sortedItems = useMemo(() => {
+    let result = filterByStatus(items, status);
+    result = filterBySearch(result, searchTerm);
+    result = sortItems(result, order);
+    return result;
+  }, [items, order, status, searchTerm]);
+
+  const saveTable = () => {
+    saveItems(items)
+      .then(msg => {
+        alert("Saved: " + msg);
+        fetchItems();
+      })
+      .catch(() => alert("Save failed."));
+  };
+
+  const addItem = () => {
+    setItems(prev => [...prev, {
+      id: "",
+      product_name: "Product Name",
+      product_type: "Type 1",
+      price: 1,
+      status: "In Stock",
+      stock: 1
+    }]);
+  };
+
+  const clearFilters = () => {
+    setOrder("");
+    setStatus("");
+    setSearchTerm("");
+  };
+
+  return (
+    <div className="inventory-container">
+      <div className="table-container-header">
+        <SearchBar value={searchTerm} onChange={setSearchTerm} />
+        <Filters
+          order={order}
+          status={status}
+          setOrder={setOrder}
+          setStatus={setStatus}
+          clearFilters={clearFilters}
+        />
+        <div className="add-button">
+          <button onClick={addItem}>Add Item</button>
+        </div>
+      </div>
+
+      <InventoryTable data={sortedItems} setData={setItems} />
+      <button id="save-button" onClick={saveTable}>Save</button>
+    </div>
+  );
 }

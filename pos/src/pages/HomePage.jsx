@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import Orders from '../components/Orders';
-import MainContent from '../components/MainContent';
-import Calculator from '../components/Calculator';
+import Orders from '../components/homePage/Orders';
+import MainContent from '../components/homePage/MainContent';
+import Calculator from '../components/homePage/Calculator';
 
 export default function HomePage(){
     const [orderedItems, setOrderedItems] = useState([]);
