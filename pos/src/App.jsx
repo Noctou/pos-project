@@ -16,12 +16,9 @@ function App() {
   return (
       <>
         <div className="container home">
-          <ThemeToggle
-            darkMode={darkMode}
-            toggleTheme={() => setDarkMode(!darkMode)}
-            />
+          <ThemeToggle darkMode={darkMode} toggleTheme={() => setDarkMode(!darkMode)} />
 
-          <Sidebar onNavigate={setCurrentPage}/>
+          <Sidebar onNavigate={setCurrentPage} />
 
           {currentPage === "home" && <HomePage />}
           {currentPage === "inventory-page" && <InventoryPage />}
