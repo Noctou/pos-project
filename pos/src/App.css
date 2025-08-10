@@ -79,6 +79,7 @@
 
 .side-bar:hover {
     width: 6vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
 .icon-wrapper-sidebar {
@@ -553,6 +554,7 @@ img {
     overflow-y: auto;
     border: 1px solid black;
     background-color: #b7b7b7;
+    border-radius: 8px;
 }
 
 .history-page h1 {
