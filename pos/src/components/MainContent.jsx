@@ -39,7 +39,7 @@ export default function MainContent() {
     const filteredItems = filter === "All" ? items : items.filter(item => item.category === filter);
 
     return (
-        <div className="items-container">
+        <>
             <div className="buttons-wrapper">
                 <button
                     className={filter === "All" ? "active" : ""}
@@ -71,6 +71,6 @@ export default function MainContent() {
                     <p>{item.name}</p>
                 </div>
             ))}
-        </div>
+        </>
     );
 }

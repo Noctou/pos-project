@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import useTheme from './hooks/useThemeToggle';
 
 import ThemeToggle from "./components/ThemeToggle";
@@ -6,34 +8,30 @@ import Orders from './components/Orders';
 import MainContent from './components/MainContent';
 
 import './App.css'
+import Calculator from './components/Calculator';
+import HistoryPage from "./pages/HistoryPage";
+import InventoryPage from "./pages/InventoryPage";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const [darkMode, setDarkMode] = useTheme();
+  const [currentPage, setCurrentPage] = useState("home"); 
 
   return (
-      <div className="container">
-        <ThemeToggle darkMode={darkMode} toggleTheme={() => setDarkMode(!darkMode)} />
-        
-        <Sidebar />
-          
-        <div className="layer">
-          <div className="main-content-container">
-            <MainContent />
-          </div>
+      <>
+        <div className="container home">
+          <ThemeToggle
+            darkMode={darkMode}
+            toggleTheme={() => setDarkMode(!darkMode)}
+            />
 
-          <div className="orders-container">
-            <div className="orders-header">
-              <h1>Orders:</h1>
-            </div>
-            <div className='table-container'>
-              <Orders />
-            </div>
-            <div className='calculator-container'>
+          <Sidebar onNavigate={setCurrentPage}/>
 
-            </div>
-          </div>
-        </div>
+          {currentPage === "home" && <HomePage />}
+          {currentPage === "inventory-page" && <InventoryPage />}
+          {currentPage === "history-page" && <HistoryPage />}
       </div>
+    </>
   )
 }
 

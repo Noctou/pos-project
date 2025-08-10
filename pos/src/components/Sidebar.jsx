@@ -1,8 +1,8 @@
-export default function Sidebar() {
+export default function Sidebar({ onNavigate }) {
     return (
         <div className="side-bar">
-            <div className="icon-wrapper-sidebar">
-                <div className="icon-tooltip">
+            <div className="icon-wrapper-sidebar" >
+                <div className="icon-tooltip" onClick={() => onNavigate("home")}>
                     <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         height="24px" 
@@ -15,7 +15,7 @@ export default function Sidebar() {
                     <span className="tooltip-text">Home</span>
                 </div>
                 
-                <div className="icon-tooltip">
+                <div className="icon-tooltip" onClick={() => onNavigate("inventory-page")}>
                     <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         height="24px" 
@@ -28,7 +28,7 @@ export default function Sidebar() {
                     <span className="tooltip-text">Inventory</span>
                 </div>
 
-                <div className="icon-tooltip">
+                <div className="icon-tooltip" onClick={() => onNavigate("history-page")}>
                     <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         height="24px" 
