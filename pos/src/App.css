@@ -1,6 +1,6 @@
 /* Main Styling */
 
-.container {
+.container{
     /* border: red 1px solid; */
 
     display: flex;
@@ -74,7 +74,9 @@
     align-items: center;
 
     background-color: rgb(77, 77, 209);
-} .side-bar:hover {
+} 
+
+.side-bar:hover {
     width: 6vw;
 }
 
@@ -152,11 +154,13 @@
     padding-top: 1.5rem;
 
     user-select: none;
+}
 
-    transition: ease-in 0.1s;
-} .item:hover {
+.item:hover{
     transform: scale(1.05);
-} .item:active {
+}
+
+.item:active{
     transform: scale(1);
 }
 
@@ -182,9 +186,13 @@ img {
     color: white;
 
     transition: ease-in 0.1s;
-} .buttons-wrapper button:hover {
+}
+
+.buttons-wrapper button:hover {
     transform: scale(1.1);
-} .buttons-wrapper button.active {
+}
+
+.buttons-wrapper button.active {
     background-color: rgb(30, 30, 100);
     transform: scale(1.05);
 }
@@ -208,7 +216,7 @@ img {
     background-color: rgb(77, 77, 209);
 }
 
-.table-container {
+.table-container{
     /* background-color: black; */
     border: 1px solid black;
     border-radius: 5px;
@@ -217,13 +225,13 @@ img {
     overflow-y: auto;
 }
 
-.orders-table {
+.orders-table{
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
 }
 
-.orders-table th {
+.orders-table th{
     background-color: rgb(48, 26, 146);
     width: 100%;
     height: 3rem;
@@ -232,14 +240,14 @@ img {
     
 }
 
-.ordered-items td {
+.ordered-items td{
     border-bottom: 1px solid black;
     height: 30px;
     text-align: center;
     /* background-color: rgb(60, 58, 63); */
 }
 
-.ordered-items td button {
+.ordered-items td button{
     margin-left: 10px;
     width: 20px;
     height: 20px;
@@ -250,9 +258,7 @@ img {
 
 /* Calculator Container */
 
-/* Calculator */
-
-.calculator-container {
+.calculator-container{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -264,12 +270,12 @@ img {
     box-sizing: border-box;
 }
 
-.display {
+.display{
     width: auto;
     height: 30%;
 }
 
-.calculator-display-table {
+.calculator-display-table{
     height: 100%;
     width: 100%;
     border: 1px solid black;
@@ -279,34 +285,34 @@ img {
     overflow: hidden;
 }
 
-.calculator-display-table td {
+.calculator-display-table td{
     width: 50%;
     border-bottom: 1px solid black;
     padding: 10px
 }
 
-.calculator-display-table tr:last-child {
+.calculator-display-table tr:last-child{
     font-size: large;
     font-weight: bold;
 }
 
-.calculator-display-table td:nth-child(1) {
+.calculator-display-table td:nth-child(1){
     border-right: 1px solid black;
 }
 
-.calculator-display-table td:nth-child(2) {
+.calculator-display-table td:nth-child(2){
     border-left: 1px solid black;
     text-align: right;
 }
 
-.calculator-buttons {
+.calculator-buttons{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 10px;
     /* max-width: 200px; */
 }
 
-.calculator-buttons button {
+.calculator-buttons button{
     color: white;
     padding: 15px;
     font-size: 1.2rem;
@@ -315,22 +321,22 @@ img {
     cursor: pointer;
 }
 
-.calculator-container button:hover {
+.calculator-container button:hover{
     transform: scale(1.01);
 }
 
-.calculator-container button:active {
+.calculator-container button:active{
     transform: scale(1);
 }
 
-.check-out-buttons {
+.check-out-buttons{
     display: flex;
     justify-content: space-around;
     gap:10px;
     width: 100%;
 }
 
-.check-out-buttons button {
+.check-out-buttons button{
     width: 50%;
     height: 50px;
     border: none;
@@ -338,29 +344,180 @@ img {
 }
 
 #btn-10, #btn-20, #btn-30{
-    background-color: #120a31;
+    background-color: #191038;
 }
 
-#btn-← {
+#btn-←{
     grid-column: span 2;
 }
 
-#cancel-button {
+#cancel-button{
     background-color: rgb(139, 30, 30);
-} #cancel-button:hover {
+}
+
+#check-out-button{
+    background-color: green;
+}
+
+#cancel-button:hover{
     background-color: rgb(85, 15, 15);
 }
 
-#check-out-button {
-    background-color: rgb(106, 165, 78);
-} #check-out-button:hover {
+#check-out-button:hover{
     background-color: rgb(7, 88, 7);
 }
 
-.history-page h1 {
-    margin-left: 500px;
+/* Inventory Page */
+
+.inventory-container{
+    margin-left: 4vw;
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    gap: 10px;
+    padding: 20px;
+
 }
 
-.inventory-page h1 {
+.table-container-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.table-container-header select,
+.table-container-header button,
+#save-button{
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 130px;
+    height: 35px;
+}
+
+#save-button{
+    background-color: #437057;
+    margin-top: auto;
+    margin-left:auto;
+}
+
+.table-container-header button{
+    background-color: rgb(77, 77, 209);
+    color: lightgray;
+}
+
+.table-container-header button:hover,
+#save-button:hover{
+    transform: translateY(-3px);
+}
+
+.table-container-header button:active,
+#save-button:active{
+    transform: translateY(0px);
+}
+
+.filters{
+    display: flex;
+    justify-content: left;
+    gap:20px;
+    align-items: center;
+}
+
+#search{
+    width: 550px;
+    height: 25px;
+    border:none;
+    border-bottom: 1px solid rgb(77, 77, 209);
+    background: none;
+    outline:none;
+    padding: 5px;
+    font-size: medium;
+}
+
+#search:focus{
+    border-bottom: 2px solid rgb(77, 77, 209);
+    
+}
+
+#context-menu{
+    display: none;
+    position: absolute;
+    background: #CD0B0B;
+    border: 1px solid black;
+    border-radius: 10px;
+    list-style: none;
+    padding: 5px;
+    font-size: small;
+}
+
+#delete-option{
+    padding: 5px;
+    cursor: pointer;
+}
+
+#context-menu:hover{
+    background-color: #7A0000;
+}
+
+.stocks-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    color: lightgray;
+}
+
+.stocks-table td, .stocks-table th{
+    /* width: 100%; */
+    /* max-width: 150px; */
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    color:black;
+    border-bottom: 1px solid black;
+}
+
+.stocks-table th{
+    background-color: rgb(77, 77, 209);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.quantity, .price{
+    height: 100%;
+    width: 80%;
+    font-size: medium;
+    text-align: center;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.product-type{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: large;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.product-status.out-of-stock{
+    background-color: red;
+}
+
+.table-scroll{
+    max-height: 85%;
+    overflow-y: auto;
+    border: 1px solid black;
+    background-color: #b7b7b7;
+}
+
+.history-page h1{
     margin-left: 500px;
 }
