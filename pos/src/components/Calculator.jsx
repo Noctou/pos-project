@@ -18,7 +18,7 @@ export default function Calculator(){
                 </table>
             </div>
             <div className="calculator-buttons">
-                {["7","8","9","10","4","5","6","20","1","2","3","30","00","0", "←"].map((label, index) =>(
+                {["7","8","9","10","4","5","6","20","1","2","3","30","00","0", "Delete"].map((label, index) =>(
                     <button id={`btn-${label || "empty"}`} key={index}>
                         {label}
                     </button>

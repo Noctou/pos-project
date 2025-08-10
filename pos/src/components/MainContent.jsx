@@ -63,7 +63,7 @@ export default function MainContent({ onAddToOrder }) {
 
             {filteredItems.map((item, index) => (
                 <div
-                    className="item"
+                    className="item fade-in"
                     key={index}
                     onClick={() => onAddToOrder(item)}
                 >
