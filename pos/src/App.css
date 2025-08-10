@@ -347,24 +347,20 @@ img {
 
 #cancel-button {
     background-color: rgb(139, 30, 30);
-}
-
-#check-out-button {
-    background-color: green;
-}
-
-#cancel-button:hover {
+} #cancel-button:hover {
     background-color: rgb(85, 15, 15);
 }
 
-#check-out-button:hover {
+#check-out-button {
+    background-color: rgb(106, 165, 78);
+} #check-out-button:hover {
     background-color: rgb(7, 88, 7);
 }
 
-.history-page h1{
+.history-page h1 {
     margin-left: 500px;
 }
 
-.inventory-page h1{
+.inventory-page h1 {
     margin-left: 500px;
 }
