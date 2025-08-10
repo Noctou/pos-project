@@ -12,17 +12,17 @@
 ## CREATE DATABASE (MySQL)
 1. Start MySQL in XAMPP
 
-2. ```CREATE DATABASE cashier;
+2. ```
+   CREATE DATABASE cashier;
     
-    CREATE TABLE stocks (
-        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-        product_name VARCHAR(55),
-        product_type VARCHAR(55),
-        price int,
-        status VARCHAR(55),
-        stocks_quantity int
-    );```
-
+   CREATE TABLE stocks (
+       id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+       product_name VARCHAR(55),
+       product_type VARCHAR(55),
+       price int,
+       status VARCHAR(55),
+       stocks_quantity int
+   );```
 ---
 
 ## START FRONTEND (React)
