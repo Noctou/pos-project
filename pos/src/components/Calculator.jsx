@@ -1,5 +1,4 @@
 export default function Calculator(){
-
     return(
         <div className="calculator-container">
             <div className="display">
@@ -30,5 +29,5 @@ export default function Calculator(){
                 <button id="check-out-button">Check Out</button>
             </div>
         </div>
-    )
+    );
 }

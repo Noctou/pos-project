@@ -1,6 +1,6 @@
 /* Main Styling */
 
-.container{
+.container {
     /* border: red 1px solid; */
 
     display: flex;
@@ -247,6 +247,8 @@ img {
     border: 1px solid black;
     border-radius: 5px;
 }
+
+/* Calculator */
 
 .calculator-container {
     display: flex;
