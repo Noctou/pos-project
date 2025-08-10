@@ -243,10 +243,12 @@ img {
     margin-left: 10px;
     width: 20px;
     height: 20px;
-    background-color: rgb(116, 35, 35);
+    background-color: rgb(139, 30, 30);
     border: 1px solid black;
     border-radius: 5px;
 }
+
+/* Calculator Container */
 
 /* Calculator */
 
@@ -335,7 +337,7 @@ img {
     border-radius: 5px;
 }
 
-#btn-10, #btn-20, #btn-30 {
+#btn-10, #btn-20, #btn-30{
     background-color: #120a31;
 }
 
@@ -359,10 +361,18 @@ img {
     background-color: rgb(7, 88, 7);
 }
 
-.history-page h1 {
+.item:hover{
+    transform: scale(1.05);
+}
+
+.item:active{
+    transform: scale(1);
+}
+
+.history-page h1{
     margin-left: 500px;
 }
 
-.inventory-page h1 {
+.inventory-page h1{
     margin-left: 500px;
 }
