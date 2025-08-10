@@ -26,7 +26,9 @@ export default function InventoryPage() {
         let sorted = [...items];
 
         if (status && status !== "all") {
-            sorted = sorted.filter(item => item.status === status);
+            sorted = sorted.filter(item =>
+                item.status?.trim().toLowerCase() === status.toLowerCase()
+            );
         }
 
         switch (order) {
@@ -67,8 +69,8 @@ export default function InventoryPage() {
 
                     <select value={status} onChange={(e) => setStatus(e.target.value)}>
                         <option value="" disabled hidden>Stock Status</option>
-                        <option value="in-stock">In Stock</option>
-                        <option value="out-of-stock">Out of Stock</option>
+                        <option value="In Stock">In Stock</option>
+                        <option value="Out of Stock">Out of Stock</option>
                         <option value="all">All</option>
                     </select>
 
