@@ -361,14 +361,6 @@ img {
     background-color: rgb(7, 88, 7);
 }
 
-.item:hover{
-    transform: scale(1.05);
-}
-
-.item:active{
-    transform: scale(1);
-}
-
 .history-page h1{
     margin-left: 500px;
 }
