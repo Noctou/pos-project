@@ -17,3 +17,12 @@ export async function saveItems(items) {
     if (!res.ok) throw new Error("Failed to save items");
     return await res.text();
 }
+
+export async function reduceQty(orderedItems) {
+    const res = await fetch(`${API_BASE}/reduceQuantityFromDB.php`, {
+        method: "POST",
+        headers: { "Content-Type" : "application/json"},
+        body: JSON.stringify(orderedItems)
+    });
+    if(!res.ok) console.log(orderedItems);
+}

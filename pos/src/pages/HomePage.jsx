@@ -3,6 +3,7 @@ import { useState } from "react";
 import Orders from '../components/homePage/Orders';
 import MainContent from '../components/homePage/MainContent';
 import Calculator from '../components/homePage/Calculator';
+import { reduceQty }  from "../services/api.js";
 
 export default function HomePage(){
     const [orderedItems, setOrderedItems] = useState([]);
@@ -39,6 +40,15 @@ export default function HomePage(){
             )
             .filter ((order) => order.quantity > 0);
         });
+    };
+
+    const updateTable = async (order) => {
+        const item = order.map(item => ({
+            name: item.name,
+            quantity: item.quantity
+        }));
+
+        await reduceQty(order);
     };
 
     const clearOrders = () => {
@@ -89,6 +99,8 @@ export default function HomePage(){
                         <button
                             onClick={() => {
                                 setShowSummary(false);
+                                console.log(orderedItems);
+                                updateTable(orderedItems);
                                 clearOrders();
                             }}
                         >
