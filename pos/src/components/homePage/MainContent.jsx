@@ -20,7 +20,7 @@ import Tyler from '../../assets/track-8.png';
 export default function MainContent({ onAddToOrder }) {
     const [filter, setFilter] = useState("All");
 
-    const stickerPrice = 50;
+    const stickerPrice = 15;
     const keychainPrice = 120;
 
     const items = [

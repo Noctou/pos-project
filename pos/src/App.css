@@ -167,16 +167,16 @@
     flex-direction: column;
     align-items: center;
     padding-top: 1.5rem;
-    transition: ease-in 0.1s;
+    transition: transform 0.1s ease-in-out;
     user-select: none;
 }
 
 .item:hover{
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 .item:active{
-    transform: scale(1);
+    transform: scale(1) !important;
 }
 
 img {
@@ -423,14 +423,14 @@ img {
 
 .table-container-header select,
 .table-container-header button,
-#save-button  {
+.save-button  {
     border-radius: 10px;
     border: 1px solid black;
     width: 130px;
     height: 35px;
 }
 
-#save-button {
+.save-button {
     background-color: rgb(77, 77, 209);
     margin-top: auto;
     margin-left:auto;
