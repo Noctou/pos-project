@@ -1,4 +1,4 @@
-export default function Orders({ orderedItems, onReduceQuantity }) {
+export default function Orders({ orderedItems, onReduceQuantity}) {
     return(
         <>
             <div className="orders-header">

@@ -17,17 +17,17 @@ import Faye from '../../assets/track-6.png';
 import Coj from '../../assets/track-7.png';
 import Tyler from '../../assets/track-8.png';
 
-export default function MainContent({ onAddToOrder }) {
+export default function MainContent({ onAddToOrder, itemsFromDB, orderedItems }) {
     const [filter, setFilter] = useState("All");
 
     const stickerPrice = 15;
     const keychainPrice = 120;
 
     const items = [
-        { name: "Computer vs. Rubiks Cube", src: Rubiks, category: "Sticker", price: stickerPrice },
+        { name: "Computer vs. Rubik's Cube", src: Rubiks, category: "Sticker", price: stickerPrice },
         { name: "Dr. PomPom", src: Dog, category: "Sticker", price: stickerPrice },
-        { name: "Pigeon Loading", src: Bird, category: "Sticker", price: stickerPrice },
-        { name: "Cat Gaming", src: Cat, category: "Sticker", price: stickerPrice },
+        { name: "Loading Pigeon", src: Bird, category: "Sticker", price: stickerPrice },
+        { name: "Catto Gaming", src: Cat, category: "Sticker", price: stickerPrice },
         { name: "Sleeping Capybara", src: Capybara, category: "Sticker", price: stickerPrice },
         { name: "Earl Agustin", src: EarlAgustin, category: "Keychain", price: keychainPrice },
         { name: "IV of Spades", src: Ivos, category: "Keychain", price: keychainPrice },
@@ -40,6 +40,9 @@ export default function MainContent({ onAddToOrder }) {
     ];
 
     const filteredItems = filter === "All" ? items : items.filter(item => item.category === filter);
+
+    const itemsFromDBByName = new Map(itemsFromDB.map(item => [item.product_name, item]));
+    const orderedItemsByName = new Map(orderedItems.map(item =>[item.name, item]));
 
     return (
         <>
@@ -64,12 +67,20 @@ export default function MainContent({ onAddToOrder }) {
                 </button>
             </div>
 
-            {filteredItems.map((item, index) => (
-                <div
-                    className="item fade-in"
+            {filteredItems.map((item, index) => {
+                const orderedItemQty = orderedItemsByName.get(item.name)?.quantity || 0;
+                const itemFromDBQty = itemsFromDBByName.get(item.name)?.stocks_quantity || 0;
+
+                return(
+                    <div
+                    className={`item fade-in ${(orderedItemQty + 1) > itemFromDBQty ? "out-of-stock" : ""}`}
                     key={index}
-                    onClick={() => onAddToOrder(item)}
-                >
+                    onClick={() => {
+                        if((orderedItemQty + 1) > itemFromDBQty){
+                            return;
+                        }
+                        onAddToOrder(item)}}
+                    >
                     <img 
                         className={item.category.toLowerCase()} 
                         src={item.src} 
@@ -77,7 +88,9 @@ export default function MainContent({ onAddToOrder }) {
                     />
                     <p>{item.name}</p>
                 </div>
-            ))}
+                )
+                
+            })}
         </>
     );
 }

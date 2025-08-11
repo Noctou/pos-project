@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 
 import Orders from '../components/homePage/Orders';
 import MainContent from '../components/homePage/MainContent';
 import Calculator from '../components/homePage/Calculator';
-import { reduceQty }  from "../services/api.js";
+import { reduceQty,getItems }  from "../services/api.js";
 
 export default function HomePage(){
     const [orderedItems, setOrderedItems] = useState([]);
     const [showSummary, setShowSummary] = useState(false);
+    const [items, setItems] = useState([]);
+      
+    const fetchItems = () => {
+        getItems().then(setItems).catch(console.error);
+    };
+    
+    useEffect(() => { fetchItems(); }, []);
 
     const now = new Date();
     const currTime = now.toLocaleString();
@@ -15,7 +22,6 @@ export default function HomePage(){
     const addToOrder = (item) => {
         setOrderedItems((prev) => {
             const existingItemIndex = prev.findIndex((order) => order.name === item.name);
-
             if(existingItemIndex !== -1){
 
                 const updatedOrders = [...prev];
@@ -43,11 +49,6 @@ export default function HomePage(){
     };
 
     const updateTable = async (order) => {
-        const item = order.map(item => ({
-            name: item.name,
-            quantity: item.quantity
-        }));
-
         await reduceQty(order);
     };
 
@@ -63,7 +64,7 @@ export default function HomePage(){
         <>
             <div className="container home">
                 <div className="items-container">
-                    <MainContent onAddToOrder={addToOrder}/>
+                    <MainContent onAddToOrder={addToOrder} itemsFromDB={items} orderedItems={orderedItems}/>
                 </div>
                 <div className="orders-container">
                     <Orders orderedItems={orderedItems} onReduceQuantity={reduceQuantity}/>

@@ -157,7 +157,7 @@
     display: none;
 }
 
-.item {
+.item{
     border: 1px rgb(160, 160, 160) solid;
     border-radius: 15px;
 
@@ -603,7 +603,7 @@ img {
     background: transparent;
 }
 
-.product-status.out-of-stock {
+.out-of-stock {
     background-color: red;
 }
 
