@@ -157,7 +157,7 @@
     display: none;
 }
 
-.item{
+.item {
     border: 1px rgb(160, 160, 160) solid;
     border-radius: 15px;
 
@@ -167,15 +167,11 @@
     flex-direction: column;
     align-items: center;
     padding-top: 1.5rem;
-    transition: transform 0.1s ease-in-out;
+    transition: ease-in 0.1s;
     user-select: none;
-}
-
-.item:hover{
+} .item:hover{
     transform: scale(1.05) !important;
-}
-
-.item:active{
+} .item:active{
     transform: scale(1) !important;
 }
 
@@ -366,17 +362,17 @@ img {
 }
 
 #cancel-button {
-    background-color: rgb(119, 31, 31);
+    border: 1px solid black;
+    /* background-color: rgb(119, 31, 31); */
 } #cancel-button:hover {
     background-color: rgb(187, 20, 20);
 }
 
-#cancel-button:hover{
-    background-color: rgb(85, 15, 15);
-}
-
-#check-out-button:hover{
-    background-color: rgb(7, 88, 7);
+#check-out-button {
+    border: 1px solid black;
+    /* background-color: transparent; */
+} #check-out-button:hover{
+    background-color: rgb(19, 139, 19);
 }
 
 .popup-overlay {
@@ -604,7 +600,7 @@ img {
 }
 
 .out-of-stock {
-    background-color: red;
+    filter: grayscale(100%) brightness(50%);
 }
 
 .table-scroll {
