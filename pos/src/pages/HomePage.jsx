@@ -14,7 +14,7 @@ export default function HomePage(){
         getItems().then(setItems).catch(console.error);
     };
     
-    useEffect(() => { fetchItems(); }, []);
+    useEffect(() => { fetchItems(); }, [showSummary]);
 
     const now = new Date();
     const currTime = now.toLocaleString();

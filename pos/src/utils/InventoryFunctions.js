@@ -1,6 +1,8 @@
 export function filterByStatus(items, status) {
+
   if (!status || status === "all") return items;
   return items.filter(item => item.status?.trim().toLowerCase() === status.toLowerCase());
+  
 }
 
 export function filterBySearch(items, searchTerm) {

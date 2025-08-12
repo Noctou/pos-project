@@ -66,8 +66,8 @@ export default function InventoryPage() {
         </div>
       </div>
 
-      <InventoryTable data={sortedItems} setData={setItems} />
-      <button class="save-button" onClick={saveTable}>Save</button>
+      <InventoryTable data={sortedItems} setData={setItems} status={status}/>
+      <button className="save-button" onClick={saveTable}>Save</button>
     </div>
   );
 }
