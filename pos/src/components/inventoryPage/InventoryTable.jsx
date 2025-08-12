@@ -1,6 +1,6 @@
 import LoadInventoryTable from "../LoadInventoryTable";
 
-export default function InventoryTable({ data, setData, status}) {
+export default function InventoryTable({ data, setData, editable}) {
   return (
     <div className="table-scroll">
       <table className="stocks-table">
@@ -15,7 +15,7 @@ export default function InventoryTable({ data, setData, status}) {
           </tr>
         </thead>
         <tbody>
-          <LoadInventoryTable data={data} setData={setData} status={status} />
+          <LoadInventoryTable data={data} setData={setData} editable={editable} />
         </tbody>
       </table>
     </div>

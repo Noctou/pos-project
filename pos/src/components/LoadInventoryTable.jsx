@@ -1,4 +1,4 @@
-export default function LoadInventoryTable({ data, setData, status }) {
+export default function LoadInventoryTable({ data, setData, editable }) {
 
   const handleCellChange = (id, field, value) => {
     setData(prevData =>
@@ -23,7 +23,7 @@ export default function LoadInventoryTable({ data, setData, status }) {
           <td className="id">{item.id}</td>
           <td
             className="product_name"
-            contentEditable
+            contentEditable={editable}
             suppressContentEditableWarning
             onBlur={(e) => {
               handleCellChange(item.id, "product_name", e.target.innerText)
@@ -35,8 +35,11 @@ export default function LoadInventoryTable({ data, setData, status }) {
               <select
                 defaultValue={item.product_type}
                 className="product-type"
+                disabled={editable}
                 onChange={(e) =>{
-                  handleCellChange(item.id, "product_type", e.target.value)
+                  if(editable){
+                    handleCellChange(item.id, "product_type", e.target.value)
+                  }
                 }}
               >
                 {["Stickers", "Laminated Keychains"].map(type => (
@@ -50,7 +53,8 @@ export default function LoadInventoryTable({ data, setData, status }) {
                 className="price"
                 defaultValue={item.price}
                 min="1"
-                step="1" 
+                step="1"
+                disabled={editable}
                 onChange={(e) => {
                   handleCellChange(item.id, "price", e.target.value)
                 } }
@@ -68,6 +72,7 @@ export default function LoadInventoryTable({ data, setData, status }) {
                   defaultValue={item.stocks_quantity}
                   min="0"
                   max="99"
+                  disabled={editable}
                   onChange={(e) => handleCellChange(item.id, "stocks_quantity", e.target.value)}
               />
           </td>

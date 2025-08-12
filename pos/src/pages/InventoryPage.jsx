@@ -10,6 +10,7 @@ export default function InventoryPage() {
   const [order, setOrder] = useState("");
   const [status, setStatus] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [editable, setEditable] = useState(true);
 
   useEffect(() => { fetchItems(); }, []);
 
@@ -61,12 +62,17 @@ export default function InventoryPage() {
           setStatus={setStatus}
           clearFilters={clearFilters}
         />
+        <div className="toggle-edit-button">
+          <button onClick={() => setEditable(prev => !prev)}>
+            {!editable ? "Disable Editing" : "Enable Editing"}
+          </button>
+        </div>
         <div className="add-button">
           <button onClick={addItem}>Add Item</button>
         </div>
       </div>
 
-      <InventoryTable data={sortedItems} setData={setItems} status={status}/>
+      <InventoryTable data={sortedItems} setData={setItems} editable={editable}/>
       <button className="save-button" onClick={saveTable}>Save</button>
     </div>
   );
