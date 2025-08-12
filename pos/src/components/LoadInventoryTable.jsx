@@ -1,4 +1,4 @@
-export default function LoadTable({ data, setData }) {
+export default function LoadInventoryTable({ data, setData }) {
 
   const handleCellChange = (id, field, value) => {
       setData(prevData =>

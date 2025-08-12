@@ -169,10 +169,18 @@
     padding-top: 1.5rem;
     transition: ease-in 0.1s;
     user-select: none;
-} .item:hover{
+}
+
+.item:hover {
     transform: scale(1.05) !important;
-} .item:active{
+}
+
+.item:active {
     transform: scale(1) !important;
+}
+
+.item-out-of-stock {
+    filter: grayscale(100%) brightness(50%);
 }
 
 img {
@@ -495,7 +503,7 @@ img {
     padding-left: 0.5rem;
 }
 
-#search  {
+.search  {
     width: 550px;
     height: 25px;
     border:none;
@@ -507,7 +515,7 @@ img {
     color: rgb(211, 211, 211);
 }
 
-#search:focus {
+.search:focus {
     border-bottom: 2px solid rgb(77, 77, 209);
 }
 
@@ -517,16 +525,16 @@ img {
 }
 
 .table-container-header button:hover,
-#save-button:hover {
+.save-button:hover {
     transform: translateY(-3px);
 }
 
 .table-container-header button:active,
-#save-button:active {
+.save-button:active {
     transform: translateY(0px);
 }
 
-#save-button {
+.save-button {
     background-color: #437057;
     margin-top: auto;
     margin-left:auto;
@@ -600,7 +608,7 @@ img {
 }
 
 .out-of-stock {
-    filter: grayscale(100%) brightness(50%);
+    background-color: red;
 }
 
 .table-scroll {
@@ -611,6 +619,179 @@ img {
     border-radius: 8px;
 }
 
-.history-page h1 {
-    margin-left: 500px;
+/*  History Page    */
+
+.history-container {
+    margin-left: 4vw;
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    gap: 10px;
+    padding: 40px;
+}
+
+.table-container-header select,
+.table-container-header button,
+.save-button  {
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 130px;
+    height: 35px;
+}
+
+.save-button {
+    background-color: rgb(77, 77, 209);
+    margin-top: auto;
+    margin-left:auto;
+    color: white;
+    transition: ease-in 0.1s;
+}
+
+.table-container-header button {
+    background-color: rgb(77, 77, 209);
+    color: lightgray;
+}
+
+.table-container-header button:hover,
+#save-button:hover {
+    transform: scale(1.05);
+}
+
+.table-container-header button:active,
+#save-button:active {
+    transform: scale(1.05);
+}
+
+.filters {
+    display: flex;
+    justify-content: left;
+    gap:20px;
+    align-items: center;
+}
+
+.filters select{
+    color:white;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgb(77, 77, 209);
+    border-radius: 0px;
+}
+
+.filters option{
+    color:black;
+    background-color: lightgray;
+}
+
+.filters select {
+    border-radius: 0px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid rgb(77, 77, 209);
+    color: white;
+    cursor: pointer;
+}
+
+.filters select option{
+    border-radius: 0px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid rgb(77, 77, 209);
+    color: white;
+    cursor: pointer;
+}
+
+.filters select option{
+    background-color: rgb(77, 77, 209);
+    color: white;
+    padding-left: 0.5rem;
+}
+
+.search  {
+    width: 550px;
+    height: 25px;
+    border:none;
+    border-bottom: 1px solid rgb(77, 77, 209);
+    background: none;
+    outline:none;
+    padding: 5px;
+    font-size: medium;
+    color: rgb(211, 211, 211);
+}
+
+.search:focus {
+    border-bottom: 2px solid rgb(77, 77, 209);
+}
+
+.table-container-header button {
+    background-color: rgb(77, 77, 209);
+    color: lightgray;
+}
+
+.table-container-header button:hover,
+.save-button:hover {
+    transform: translateY(-3px);
+}
+
+.table-container-header button:active,
+.save-button:active {
+    transform: translateY(0px);
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    color: lightgray;
+}
+
+.history-table td, .history-table th {
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    color:black;
+    border-bottom: 1px solid black;
+}
+
+.history-table th {
+    background-color: rgb(77, 77, 209);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.quantity, .price {
+    height: 100%;
+    width: 80%;
+    font-size: medium;
+    text-align: center;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.product-type {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: large;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.out-of-stock {
+    background-color: red;
+}
+
+.table-scroll {
+    max-height: 85%;
+    overflow-y: auto;
+    border: 1px solid black;
+    background-color: #b7b7b7;
+    border-radius: 8px;
 }

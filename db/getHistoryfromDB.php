@@ -17,14 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $result = $conn->query("SELECT * FROM stocks ORDER BY id ASC");
+    $result = $conn->query("SELECT * FROM history");
 
-    $stocks = [];
+    $history = [];
     while ($row = $result->fetch_assoc()) {
-        $stocks[] = $row;
+        $history[] = $row;
     }
 
     header('Content-Type: application/json');
-    echo json_encode($stocks);
+    echo json_encode($history);
     $conn->close();
 ?>

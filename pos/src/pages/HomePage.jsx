@@ -3,7 +3,7 @@ import { useState, useEffect} from "react";
 import Orders from '../components/homePage/Orders';
 import MainContent from '../components/homePage/MainContent';
 import Calculator from '../components/homePage/Calculator';
-import { reduceQty,getItems }  from "../services/api.js";
+import { reduceQty,getItems,saveHistory }  from "../services/api.js";
 
 export default function HomePage(){
     const [orderedItems, setOrderedItems] = useState([]);
@@ -60,6 +60,17 @@ export default function HomePage(){
         setShowSummary(true);
     }
 
+    function saveToHistory(){
+        const historyData = orderedItems.map((item) => ({
+            product_name : item.name,
+            product_type : item.category,
+            quantity : item.quantity,
+            total_price : item.quantity * item.price,
+            time : currTime
+        }));
+        saveHistory(historyData);
+    }
+
     return(
         <>
             <div className="container home">
@@ -100,9 +111,9 @@ export default function HomePage(){
                         <button
                             onClick={() => {
                                 setShowSummary(false);
-                                console.log(orderedItems);
                                 updateTable(orderedItems);
                                 clearOrders();
+                                saveToHistory();
                             }}
                         >
                             Close
