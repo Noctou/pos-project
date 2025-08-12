@@ -26,7 +26,13 @@ export default function InventoryPage() {
   }, [items, order, status, searchTerm]);
 
   const saveTable = () => {
-    saveItems(items)
+
+    const updatedItems = items.map(item => ({
+      ...item,
+      status: item.stocks_quantity <= 0 ? "Out of Stock" : "In Stock"
+    }));
+
+    saveItems(updatedItems)
       .then(msg => {
         alert("Saved: " + msg);
         fetchItems();

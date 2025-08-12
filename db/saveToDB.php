@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
                                     status = VALUES(status),
                                     stocks_quantity = VALUES(stocks_quantity)");
                                     
-    $upsert_stmt -> bind_param("issdsi", $id, $name, $type, $price, $status, $quantity);
+    
 
     $data = json_decode(file_get_contents("php://input"), true);
 
@@ -36,10 +36,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
         $id = !empty($item['id']) ? (int)$item['id'] : null;
         $name = $item['product_name'];
         $type = $item['product_type'];
-        $price = $item['price'];
+        $price = (int)$item['price'];
         $status = $item['status'];
         $quantity = (int)$item['stocks_quantity'];
 
+        $upsert_stmt -> bind_param("issisi", $id, $name, $type, $price, $status, $quantity);
         $upsert_stmt -> execute();
     }
 

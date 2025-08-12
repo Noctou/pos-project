@@ -23,7 +23,7 @@ export default function LoadInventoryTable({ data, setData, editable }) {
           <td className="id">{item.id}</td>
           <td
             className="product_name"
-            contentEditable={editable}
+            contentEditable={!editable}
             suppressContentEditableWarning
             onBlur={(e) => {
               handleCellChange(item.id, "product_name", e.target.innerText)
