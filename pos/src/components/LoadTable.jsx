@@ -49,9 +49,7 @@ export default function LoadTable({ data, setData }) {
               />
           </td>
           <td
-            className={item.stocks_quantity <= 0
-            ? 'product-status out-of-stock'
-            : 'product-status'}
+            className={`product-status ${item.stocks_quantity <= 0 ? "out-of-stock" : ""}`}
           >
             {item.stocks_quantity <= 0 ? 'Out of Stock' : 'In Stock'}
           </td>

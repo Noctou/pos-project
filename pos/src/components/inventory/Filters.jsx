@@ -17,7 +17,7 @@ export default function Filters({ order, status, setOrder, setStatus, clearFilte
       <select value={status} onChange={e => setStatus(e.target.value)}>
         <option value="" disabled hidden>Stock Status</option>
         <option value="In Stock">In Stock</option>
-        <option value="Out of Stock">Out of Stock</option>
+        <option value="out-of-stock">Out of Stock</option>
         <option value="all">All</option>
       </select>
 
