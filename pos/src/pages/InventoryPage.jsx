@@ -1,9 +1,9 @@
 import { useState, useEffect, useMemo } from "react";
 import { getItems, saveItems } from "../services/api";
 import { filterByStatus, filterBySearch, sortItems } from "../utils/InventoryFunctions";
-import SearchBar from "../components/inventory/SearchBar";
-import Filters from "../components/inventory/Filters";
-import InventoryTable from "../components/inventory/InventoryTable";
+import SearchBar from "../components/inventoryPage/SearchBar";
+import Filters from "../components/inventoryPage/Filters";
+import InventoryTable from "../components/inventoryPage/InventoryTable";
 
 export default function InventoryPage() {
   const [items, setItems] = useState([]);

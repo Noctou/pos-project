@@ -73,7 +73,7 @@ export default function MainContent({ onAddToOrder, itemsFromDB, orderedItems })
 
                 return(
                     <div
-                    className={`item fade-in ${(orderedItemQty + 1) > itemFromDBQty ? "out-of-stock" : ""}`}
+                    className={`item fade-in ${(orderedItemQty + 1) > itemFromDBQty ? "item-out-of-stock" : ""}`}
                     key={index}
                     onClick={() => {
                         if((orderedItemQty + 1) > itemFromDBQty){

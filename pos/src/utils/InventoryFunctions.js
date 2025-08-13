@@ -1,8 +1,9 @@
 export function filterByStatus(items, status) {
-
   if (!status || status === "all") return items;
-  return items.filter(item => item.status?.trim().toLowerCase() === status.toLowerCase());
-  
+  return items.filter(item => {
+    const computedStatus = item.stocks_quantity <= 0 ? "out-of-stock" : "in stock";
+    return computedStatus === status.toLowerCase();
+  });
 }
 
 export function filterBySearch(items, searchTerm) {

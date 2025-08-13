@@ -160,7 +160,6 @@
 .item {
     border: 1px rgb(160, 160, 160) solid;
     border-radius: 15px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 
     width: 300px;
     height: 350px;
@@ -191,9 +190,8 @@ img {
 .buttons-wrapper button {
     width: 15%;
     height: 30px;
-    backdrop-filter: blur(10px);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
+    border-radius: 10px;
+
     background-color: rgb(77, 77, 209);
     border: none;
     color: white;
@@ -238,9 +236,6 @@ img {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-
-    backdrop-filter: blur(10px);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .orders-table th {
@@ -249,6 +244,7 @@ img {
     height: 3rem;
     position: sticky;
     top: 0;
+    
 }
 
 .ordered-items td {
@@ -279,9 +275,6 @@ img {
     padding:10px;
     gap:10px;
     box-sizing: border-box;
-
-    backdrop-filter: blur(10px);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .display {
@@ -335,9 +328,7 @@ img {
     cursor: pointer;
     transition: ease-in 0.1s;
 
-    backdrop-filter: blur(10px);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
+    border-radius: 8px;
 }
 
 .calculator-container button:hover {
@@ -359,10 +350,7 @@ img {
     width: 50%;
     height: 50px;
     border: none;
-
-    backdrop-filter: blur(10px);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 #btn-10, #btn-20, #btn-30 {
@@ -623,33 +611,6 @@ img {
     border-radius: 8px;
 }
 
-/* History Page Styling */
-
-.history-container {
-    /* border: red 1px solid; */
-    height: 100vh;
-    width: 100vw;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-.purchase-history-wrapper {
-    background-color: rgba(70, 70, 70, 0.3);
-    backdrop-filter: blur(10px);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-
-    width: 80%;
-    height: 80%;
-    margin-left: 5rem;
-    border-radius: 12px;
-    overflow-x: auto;
-    padding: 2.5rem;
-}
-
-.purchase-history-wrapper::-webkit-scrollbar {
-    display: none;
+.history-page h1 {
+    margin-left: 500px;
 }

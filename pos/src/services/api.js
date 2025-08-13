@@ -26,3 +26,23 @@ export async function reduceQty(orderedItems) {
     });
     if(!res.ok) console.log(orderedItems);
 }
+
+// Save history
+export async function saveHistory(info) {
+    const res = await fetch(`${API_BASE}/saveHistoryToDB.php`,{
+        method: "POST",
+        headers: { "Content-Type" : "application/json" },
+        
+        body: JSON.stringify(info)
+    });
+    console.log("func received:", info);
+    if (!res.ok) throw new Error("Failed to save History");
+    return await res.text();
+}
+
+// get history
+export async function getHistory() {
+    const res = await fetch(`${API_BASE}/getHistoryFromDB.php`);
+    if (!res.ok) throw new Error("Failed to fetch history");
+    return await res.json();
+}

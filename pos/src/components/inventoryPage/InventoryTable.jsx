@@ -1,4 +1,4 @@
-import LoadTable from "../LoadTable";
+import LoadInventoryTable from "../LoadInventoryTable";
 
 export default function InventoryTable({ data, setData, status}) {
   return (
@@ -15,7 +15,7 @@ export default function InventoryTable({ data, setData, status}) {
           </tr>
         </thead>
         <tbody>
-          <LoadTable data={data} setData={setData} status={status} />
+          <LoadInventoryTable data={data} setData={setData} status={status} />
         </tbody>
       </table>
     </div>

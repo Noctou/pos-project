@@ -1,11 +1,19 @@
-export default function LoadTable({ data, setData }) {
+export default function LoadInventoryTable({ data, setData, status }) {
 
   const handleCellChange = (id, field, value) => {
-      setData(prevData =>
-          prevData.map(item =>
-              item.id === id ? { ...item, [field]: value } : item
-          )
-      );
+    setData(prevData =>
+        prevData.map(item => {
+            if (item.id !== id) return item;
+
+            const updatedItem = { ...item, [field]: value };
+
+            if (field === "stocks_quantity") {
+                updatedItem.status = value <= 0 ? "Out of Stock" : "In Stock";
+            }
+
+            return updatedItem;
+        })
+    );
   };
 
   return (

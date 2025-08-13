@@ -16,23 +16,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+
+    $history_stmt = $conn -> prepare("INSERT INTO history (time, product_name, product_type, quantity, total_price)
+                                    VALUES (?, ?, ?, ?, ?);");
+                                    
     
     $data = json_decode(file_get_contents("php://input"), true);
 
-    // insert into table
-    // but updates table when id is existing
-    $reduceQty_stmt = $conn -> prepare("UPDATE stocks SET 
-                                        stocks_quantity = stocks_quantity - ? WHERE product_name = ? AND stocks_quantity >= ?");
-                                    
     foreach ($data as $item) {
-        $name = $item['name'];
+        $time = $item['time'];
+        $name = $item['product_name'];
+        $type = $item['product_type'];
         $quantity = (int)$item['quantity'];
+        $total_price = (int)$item['total_price'];
 
-        $reduceQty_stmt -> bind_param("isi", $quantity, $name, $quantity);
-        $reduceQty_stmt -> execute();
+        $history_stmt -> bind_param("sssii", $time, $name, $type, $quantity, $total_price);
+        $history_stmt -> execute();
     }
 
-    $reduceQty_stmt -> close();
+    $history_stmt -> close();
     $conn->close();
 
     echo "Success";
