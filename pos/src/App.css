@@ -160,6 +160,7 @@
 .item {
     border: 1px rgb(160, 160, 160) solid;
     border-radius: 15px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 
     width: 300px;
     height: 350px;
@@ -198,8 +199,9 @@ img {
 .buttons-wrapper button {
     width: 15%;
     height: 30px;
-    border-radius: 10px;
-
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
     background-color: rgb(77, 77, 209);
     border: none;
     color: white;
@@ -244,6 +246,9 @@ img {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .orders-table th {
@@ -252,7 +257,6 @@ img {
     height: 3rem;
     position: sticky;
     top: 0;
-    
 }
 
 .ordered-items td {
@@ -283,6 +287,9 @@ img {
     padding:10px;
     gap:10px;
     box-sizing: border-box;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .display {
@@ -336,7 +343,9 @@ img {
     cursor: pointer;
     transition: ease-in 0.1s;
 
-    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
 }
 
 .calculator-container button:hover {
@@ -358,7 +367,10 @@ img {
     width: 50%;
     height: 50px;
     border: none;
-    border-radius: 5px;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
 }
 
 #btn-10, #btn-20, #btn-30 {
