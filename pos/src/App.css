@@ -190,6 +190,12 @@ img {
     border-radius: 8px;
 }
 
+.rect {
+    width:147px;
+    height: 224px;
+    border-radius: 8px;
+}
+
 .buttons-wrapper {
     display: flex;
     gap: 15px;
