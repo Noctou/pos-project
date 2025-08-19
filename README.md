@@ -26,6 +26,14 @@
    );
 
    ```
+3. ```
+   CREATE TABLE history (
+       time varchar(55),
+       product_name varchar(55),
+       product_type varchar(55),
+       quantity int, total_price int
+   );
+   ```
 ---
 
 ## START FRONTEND (React)
